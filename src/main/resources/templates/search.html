@@ -37,7 +37,9 @@
     <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
-
+    <h1 th:if="${noResults}">
+        <h1>No Results Found</h1>
+    </h1>
 
     <table th:fragment="search" class="job-listing" th:each=" job : ${jobs}">
         <tr th:each="key : ${job.keySet()}">

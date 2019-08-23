@@ -30,6 +30,9 @@ public class SearchController {
             model.addAttribute("title", "All jobs with keyword '" + searchTerm + "'");
             model.addAttribute("jobs", jobs);
             model.addAttribute("columns", ListController.columnChoices);
+            if (jobs.size()==0){
+                model.addAttribute("noResults", true);
+            }
             return "search";
         }
         else {
@@ -37,6 +40,9 @@ public class SearchController {
             model.addAttribute("title", "Jobs with " + searchType + ": " + searchTerm);
             model.addAttribute("jobs", jobs);
             model.addAttribute("columns", ListController.columnChoices);
+            if (jobs.size()==0){
+                model.addAttribute("noResults", true);
+            }
             return "search";
         }
 
